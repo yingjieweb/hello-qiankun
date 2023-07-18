@@ -1,5 +1,11 @@
 # ☯ Micro-front-end demo - Base
 
-一个微前端的项目基座
+基于 qiankun 搭建的一款微前端项目。该仓库为项目基座。
 
-A micro-front-end of the project dock.
+A micro-front-end project built based on qiankun. This repo serves as the project base.
+
+
+- 基座 Base - [hello-qiankun](https://github.com/yingjieweb/hello-qiankun)
+- 子产品 Vue2 - [hello-qiankun-vue2](https://github.com/yingjieweb/hello-qiankun-vue2)
+- 子产品 Vue3 - [hello-qiankun-vue3](https://github.com/yingjieweb/hello-qiankun-vue3)
+- 子产品 React - [hello-qiankun-react](https://github.com/yingjieweb/hello-qiankun-react)
