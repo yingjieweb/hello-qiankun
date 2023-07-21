@@ -1,31 +1,26 @@
-import { registerMicroApps, start } from "qiankun";
+import { registerMicroApps, start } from 'qiankun';
 
-const loader = (loading: boolean) => {
-  console.log(loading);
+interface SubAppConfig {
+  name: string;
+  entry: string;
+  container: string;
+  activeRule: string;
+  loader?: (loading: boolean) => void;
 }
 
-registerMicroApps([
+// Define the sub-apps
+const microApps: SubAppConfig[] = [
   {
-    name: "micro-vue2",
-    entry: "//localhost:20000",
-    container: "#container",
-    activeRule: "/vue2",
-    loader
+    name: 'sub-app-vue2',
+    entry: '//localhost:8080/',
+    container: '#container',
+    activeRule: '/vue2',
+    loader: (loading: boolean) => {
+      console.log('loading', loading);
+    },
   },
-  {
-    name: "micro-vue3",
-    entry: "//localhost:30000",
-    container: "#container",
-    activeRule: "/vue3",
-    loader
-  },
-  {
-    name: "micro-react",
-    entry: "//localhost:40000",
-    container: "#container",
-    activeRule: "/react",
-    loader
-  },
-]);
+];
+
+registerMicroApps(microApps);
 
 start();
