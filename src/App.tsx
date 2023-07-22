@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Link } from "react-router-dom";
-import './registerApps'
+import "./registerApps";
 
 const App: React.FC = () => {
   return (
@@ -12,11 +12,14 @@ const App: React.FC = () => {
       </BrowserRouter>
 
       {/* 切换导航，将微应用渲染到 container 容器中 */}
-      <div id="container" style={{
-        border: '1px solid red',
-        height: '100vh',
-        width: '100vw'
-      }}></div>
+      <div
+        id="container"
+        style={{
+          border: "1px solid red",
+          height: "100vh",
+          width: "100vw",
+        }}
+      ></div>
     </>
   );
 };

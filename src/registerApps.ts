@@ -1,6 +1,6 @@
-import { registerMicroApps, start } from 'qiankun';
+import { registerMicroApps, start } from "qiankun";
 
-interface SubAppConfig {
+interface MicroAppConfig {
   name: string;
   entry: string;
   container: string;
@@ -8,19 +8,23 @@ interface SubAppConfig {
   loader?: (loading: boolean) => void;
 }
 
-// Define the sub-apps
-const microApps: SubAppConfig[] = [
+// Define the micro-apps
+const microApps: MicroAppConfig[] = [
   {
-    name: 'sub-app-vue2',
-    entry: '//localhost:8080/',
-    container: '#container',
-    activeRule: '/vue2',
+    name: "micro-app-vue2",
+    entry: "//localhost:8080",
+    container: "#container",
+    activeRule: "/vue2",
     loader: (loading: boolean) => {
-      console.log('loading', loading);
+      console.log("loading", loading);
     },
   },
 ];
 
-registerMicroApps(microApps);
+registerMicroApps(microApps, {
+  beforeLoad: [async (app) => console.log("beforeLoad", app.name)],
+  beforeMount: [async (app) => console.log("beforeLoad", app.name)],
+  afterMount: [async (app) => console.log("beforeLoad", app.name)],
+});
 
 start();
