@@ -13,7 +13,7 @@ const microApps: MicroAppConfig[] = [
   {
     name: "micro-app-vue2",
     entry: "//localhost:8080",
-    container: "#container",
+    container: "#microContainer",
     activeRule: "/vue2",
     loader: (loading: boolean) => {
       console.log("loading", loading);
