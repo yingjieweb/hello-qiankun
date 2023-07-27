@@ -19,12 +19,21 @@ const microApps: MicroAppConfig[] = [
       console.log("loading", loading);
     },
   },
+  {
+    name: "micro-app-vue3",
+    entry: "//localhost:80801",
+    container: "#microContainer",
+    activeRule: "/vue3",
+    loader: (loading: boolean) => {
+      console.log("loading", loading);
+    },
+  },
 ];
 
 registerMicroApps(microApps, {
   beforeLoad: [async (app) => console.log("beforeLoad", app.name)],
-  beforeMount: [async (app) => console.log("beforeLoad", app.name)],
-  afterMount: [async (app) => console.log("beforeLoad", app.name)],
+  beforeMount: [async (app) => console.log("beforeMount", app.name)],
+  afterMount: [async (app) => console.log("afterMount", app.name)],
 });
 
 start();
