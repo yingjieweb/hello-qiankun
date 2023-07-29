@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Link } from "react-router-dom";
 import "./registerApps";
 import "./App.scss";
+import qiankun from './assets/qiankun.jpg'
 
 const App: React.FC = () => {
   return (
@@ -15,7 +16,9 @@ const App: React.FC = () => {
       </div>
 
       {/* 切换导航，将微应用渲染到 container 容器中 */}
-      <div id="microContainer"></div>
+      <div id="microContainer">
+        <img className="qiankun" src={qiankun} alt="qiankun" />
+      </div>
     </div>
   );
 };
